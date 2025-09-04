@@ -17,7 +17,6 @@ class AppTheme {
     surface: surfaceColor,
     onPrimary: Colors.white,
     onSecondary: Colors.white,
-    onBackground: textPrimaryColor,
     onSurface: textPrimaryColor,
   );
 
@@ -83,7 +82,7 @@ class AppTheme {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
-        shadowColor: Colors.black.withOpacity(0.05),
+        shadowColor: Colors.black.withValues(alpha: 0.05),
       ),
 
       elevatedButtonTheme: ElevatedButtonThemeData(

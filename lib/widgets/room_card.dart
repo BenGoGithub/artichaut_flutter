@@ -33,7 +33,7 @@ class RoomCard extends StatelessWidget {
                   end: Alignment.bottomRight,
                   colors: [
                     AppTheme.accentColor,
-                    AppTheme.secondaryColor.withOpacity(0.3),
+                    AppTheme.secondaryColor,
                   ],
                 ),
               ),
@@ -45,7 +45,7 @@ class RoomCard extends StatelessWidget {
                       borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
                       image: DecorationImage(
                         image: NetworkImage(
-                          'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=400&h=200&fit=crop&crop=center',
+                          'https://ilot4.le-campus.eu/assets/images/room-deluxe.jpg',
                         ),
                         fit: BoxFit.cover,
                         onError: (error, stackTrace) {},
@@ -61,7 +61,7 @@ class RoomCard extends StatelessWidget {
                         end: Alignment.bottomCenter,
                         colors: [
                           Colors.transparent,
-                          Colors.black.withOpacity(0.3),
+                          Colors.black.withValues(alpha: 0.03),
                         ],
                       ),
                     ),

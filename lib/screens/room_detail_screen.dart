@@ -28,7 +28,7 @@ class RoomDetailScreen extends StatelessWidget {
                     end: Alignment.bottomRight,
                     colors: [
                       AppTheme.accentColor,
-                      AppTheme.secondaryColor.withOpacity(0.3),
+                      AppTheme.secondaryColor,
                     ],
                   ),
                 ),

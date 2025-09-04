@@ -1,70 +1,101 @@
 import 'package:flutter/material.dart';
 
-// Configuration du thème personnalisé
 class AppTheme {
-  // Couleurs de la charte graphique
-  static const Color primaryColor = Color(0xFF2196F3);
-  static const Color secondaryColor = Color(0xFF03DAC6);
-  static const Color backgroundColor = Color(0xFFF5F5F5);
+  // Couleurs inspirées de l'image
+  static const Color primaryColor = Color(0xFF8B7355); // Couleur bois/bronze
+  static const Color secondaryColor = Color(0xFF9CAF88); // Vert sauge
+  static const Color backgroundColor = Color(0xFFF5F5F0); // Beige clair
   static const Color surfaceColor = Color(0xFFFFFFFF);
-  static const Color errorColor = Color(0xFFB00020);
-  static const Color onPrimaryColor = Color(0xFFFFFFFF);
-  static const Color onSecondaryColor = Color(0xFF000000);
-  static const Color onBackgroundColor = Color(0xFF000000);
-  static const Color onSurfaceColor = Color(0xFF000000);
-  static const Color onErrorColor = Color(0xFFFFFFFF);
+  static const Color accentColor = Color(0xFFE8DDD4); // Beige chaud
+  static const Color textPrimaryColor = Color(0xFF2C2C2C);
+  static const Color textSecondaryColor = Color(0xFF6B6B6B);
 
-  // Schéma de couleurs
   static const ColorScheme colorScheme = ColorScheme.light(
     primary: primaryColor,
     secondary: secondaryColor,
     background: backgroundColor,
     surface: surfaceColor,
-    error: errorColor,
-    onPrimary: onPrimaryColor,
-    onSecondary: onSecondaryColor,
-    onBackground: onBackgroundColor,
-    onSurface: onSurfaceColor,
-    onError: onErrorColor,
+    onPrimary: Colors.white,
+    onSecondary: Colors.white,
+    onBackground: textPrimaryColor,
+    onSurface: textPrimaryColor,
   );
 
-  // Typographie personnalisée
   static const TextTheme textTheme = TextTheme(
-    displayLarge: TextStyle(
-      fontSize: 32,
+    headlineLarge: TextStyle(
+      fontSize: 28,
       fontWeight: FontWeight.w300,
-      letterSpacing: -1.5,
-      color: onBackgroundColor,
+      color: textPrimaryColor,
+      letterSpacing: -0.5,
     ),
-    // Le reste du TextTheme identique à votre code original...
+    headlineMedium: TextStyle(
+      fontSize: 24,
+      fontWeight: FontWeight.w400,
+      color: textPrimaryColor,
+    ),
+    titleLarge: TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.w500,
+      color: textPrimaryColor,
+    ),
+    titleMedium: TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.w500,
+      color: textPrimaryColor,
+    ),
+    bodyLarge: TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.w400,
+      color: textPrimaryColor,
+      height: 1.5,
+    ),
+    bodyMedium: TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.w400,
+      color: textSecondaryColor,
+      height: 1.4,
+    ),
+    labelLarge: TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.w600,
+      color: primaryColor,
+      letterSpacing: 0.5,
+    ),
   );
 
-  // Thème principal de l'application
   static ThemeData get lightTheme {
     return ThemeData(
       useMaterial3: true,
       colorScheme: colorScheme,
       textTheme: textTheme,
-      fontFamily: 'Roboto',
-      // Configuration des composants comme appBarTheme, buttonThemes, etc.
-    );
-  }
+      fontFamily: 'Inter',
 
-  // Thème sombre (optionnel)
-  static ThemeData get darkTheme {
-    return ThemeData(
-      useMaterial3: true,
-      brightness: Brightness.dark,
-      colorScheme: const ColorScheme.dark(
-        primary: primaryColor,
-        secondary: secondaryColor,
-        background: Color(0xFF121212),
-        surface: Color(0xFF1E1E1E),
-        error: Color(0xFFCF6679),
+      appBarTheme: const AppBarTheme(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        foregroundColor: textPrimaryColor,
+        centerTitle: true,
       ),
-      textTheme: textTheme.apply(
-        bodyColor: Colors.white,
-        displayColor: Colors.white,
+
+      cardTheme: CardThemeData(
+        color: surfaceColor,
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        shadowColor: Colors.black.withOpacity(0.05),
+      ),
+
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: primaryColor,
+          foregroundColor: Colors.white,
+          elevation: 0,
+          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
       ),
     );
   }

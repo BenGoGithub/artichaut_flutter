@@ -1,7 +1,7 @@
 import 'package:artichaut_flutter/screens/room_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:artichaut_flutter/models/room.dart';
-import 'package:artichaut_flutter/widgets/room_card.dart';
+import 'package:artichaut_flutter/widgets/cards/room_card.dart';
 
 import '../themes/app_theme.dart';
 

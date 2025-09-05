@@ -1,4 +1,9 @@
 import 'package:artichaut_flutter/models/room.dart';
+import 'package:artichaut_flutter/themes/app_theme.dart';
+import 'package:artichaut_flutter/widgets/cards/room_card.dart';
+import 'package:artichaut_flutter/widgets/images/image_room.dart';
+import 'package:artichaut_flutter/widgets/layouts/price_with_rating.dart';
+import 'package:artichaut_flutter/widgets/layouts/room_info.dart';
 import 'package:artichaut_flutter/widgets/tags/rating_tag.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -65,5 +70,39 @@ void main() {
       expect(find.text('5'), findsOneWidget);
       expect(find.byIcon(Icons.star), findsOneWidget);
     });
+
+    /// Tests du widget ImageRoom - Composant gérant l'affichage des images avec overlay
+    group('ImageRoom Widget Tests', () {
+      late Room testRoom;
+
+      setUp(() {
+        // Création d'une chambre de test avec note positive pour tester le RatingTag
+        testRoom = Room(
+          id: '1',
+          title: 'Test Room',
+          description: 'Test Description',
+          imageUrl: 'assets/images/room-deluxe.jpg',
+          price: 100.0,
+          rating: 4,
+          amenities: ['WiFi'],
+        );
+      });
+
+    testWidgets('RoomCard should contain all modular components', (WidgetTester tester) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          theme: AppTheme.lightTheme,
+          home: Scaffold(
+            body: RoomCard(room: testRoom),
+          ),
+        ),
+      );
+
+      // Vérification de la présence de tous les composants modulaires
+      expect(find.byType(ImageRoom), findsOneWidget);
+      expect(find.byType(RoomInfo), findsOneWidget);
+      expect(find.byType(PriceWithRating), findsOneWidget);
+    });
+  });
   });
 }

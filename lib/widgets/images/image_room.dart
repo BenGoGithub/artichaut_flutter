@@ -35,8 +35,10 @@ class ImageRoom extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
-              image: const DecorationImage(
-                image: NetworkImage('https://ilot4.le-campus.eu/assets/images/room-deluxe.jpg'),
+                image: DecorationImage(
+                  image: AssetImage(room.imageUrl.isNotEmpty
+                      ? room.imageUrl
+                      : 'assets/images/room-deluxe.jpg'),
                 fit: BoxFit.cover, // L'image couvre tout le container en gardant ses proportions
               ),
             ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:artichaut_flutter/models/room.dart';
+import '../models/room.dart';
 import '../themes/app_theme.dart';
 import '../widgets/buttons/icon_text_buton.dart';
 import '../services/reservation_service.dart';

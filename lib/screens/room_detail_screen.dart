@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:artichaut_flutter/models/room.dart';
 import '../themes/app_theme.dart';
+import '../widgets/buttons/icon_text_buton.dart';
+import '../services/reservation_service.dart';
 
 class RoomDetailScreen extends StatelessWidget {
   final Room room;
@@ -107,9 +109,10 @@ class RoomDetailScreen extends StatelessWidget {
                     // Bouton de réservation
                     SizedBox(
                       width: double.infinity,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        child: const Text('Réserver maintenant'),
+                      child: IconTextButton(
+                        onPressed: () => ReservationService.showReservationDialog(context, room),
+                        label: 'Réserver maintenant',
+                        icon: Icons.hotel,
                       ),
                     ),
                   ],

@@ -8,8 +8,9 @@ import 'price_with_rating.dart';
 /// Responsabilité : organisation du contenu textuel et des actions utilisateur
 class RoomInfo extends StatelessWidget {
   final Room room; // Modèle contenant les données de la chambre
+  final VoidCallback? onReserve;
 
-  const RoomInfo({super.key, required this.room});
+  const RoomInfo({super.key, required this.room, this.onReserve,});
 
   @override
   Widget build(BuildContext context) {
@@ -43,12 +44,9 @@ class RoomInfo extends StatelessWidget {
             // Widget bouton réutilisable avec icône et texte
             // Utilisation d'un callback pour gérer l'action de réservation
             IconTextButton(
-              onPressed: () {
-                // TODO: Implémenter la logique de réservation
-                // Cette action devrait probablement :
-                // - Naviguer vers un écran de réservation
-                // - Ou déclencher une action dans un Provider/état global
-                // - Ou afficher un dialog de confirmation
+            onPressed: onReserve ?? () {
+            // Action par défaut si aucun callback n'est fourni
+                print('Réservation pour la chambre: ${room.title}');
               },
               label: 'Réserver',
               icon: Icons.hotel, // Icône cohérente avec le contexte hôtelier

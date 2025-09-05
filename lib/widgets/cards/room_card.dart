@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../models/room.dart';
-import '../../themes/app_theme.dart';
-import '../buttons/icon_text_buton.dart';
 import '../images/image_room.dart';
 import '../layouts/room_info.dart';
 
@@ -11,11 +9,13 @@ import '../layouts/room_info.dart';
 class RoomCard extends StatelessWidget {
   final Room room; // Modèle de données contenant les informations de la chambre
   final VoidCallback? onTap; // Callback optionnel pour gérer le tap sur la carte
+  final VoidCallback? onReserve;
 
   const RoomCard({
     super.key,
     required this.room,
     this.onTap,
+    this.onReserve,
   });
 
   @override
@@ -36,7 +36,8 @@ class RoomCard extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(20),
               // Widget réutilisable gérant l'affichage des informations textuelles
-              child: RoomInfo(room: room),
+              child: RoomInfo(room: room, onReserve: onReserve,
+              ),
             ),
           ],
         ),

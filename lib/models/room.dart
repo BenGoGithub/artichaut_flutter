@@ -25,7 +25,7 @@ class Room {
         description: 'La chambre de Luxe offre 50m² d\'espace pensé pour votre bien-être, avec un coin salon séparé et une salle de bain équipée d\'une baignoire et d\'une douche à l\'italienne. Les matériaux de qualité, l\'éclairage soigné et la vue dégagée créent une atmosphère relaxante et chaleureuse.',
         imageUrl: 'assets/images/suite-deluxe.jpg',
         price: 140,
-        rating: 0,
+        rating: 5,
         amenities: ['50m²', 'Coin salon', 'Baignoire', 'Douche italienne', 'Vue dégagée'],
       ),
       Room(
